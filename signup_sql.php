@@ -26,5 +26,6 @@ if($result) { echo "insert success!"; }
 else { echo "failure"; }
     
 mysqli_close($conn);
-   
 ?>
+<script type="text/javascript">alert('회원가입이 완료되었습니다.');</script>
+<meta http-equiv="refresh" content="0 url=login.php"> <!-- 회원가입 후 연결되는 페이지 -->
