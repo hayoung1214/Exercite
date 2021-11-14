@@ -18,7 +18,7 @@
                     </tr>
                     <tr>
                     <td><label for=""><b>비밀번호</b></label></td>
-                    <td><input type="password" name="pwd1" placeholder="Enter Your Password" required></td>
+                    <td><input type="password" name="password" placeholder="Enter Your Password" required></td>
                     </tr>
                 </table>
                 <input type="submit" name="login "value="로그인">
