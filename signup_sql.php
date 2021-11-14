@@ -3,8 +3,8 @@ $host='localhost';
 $user='team10';
 $password='team10';
 $dbname='team10';
+
 //변수지정
-//$user_type=$_POST['usertype'];
 $user_name=$_POST['name'];
 $user_id=$_POST['id'];
 $user_pw=$_POST['password'];
@@ -20,8 +20,22 @@ else{
     exit;
 }
 echo $user_name, $user_id, $user_pw, $user_age, $user_gender;
-$sql="INSERT INTO user (id, name, age, gender, password) VALUES ('$user_id','$user_name','$user_age','$user_gender','$user_pw')";
+
+$sql = "SELECT * FROM user WHERE id='".$_POST['id']."'";
 $result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+if($count>0){
+    echo " <script> alert('이미 존재하는 아이디 입니다.'); </script>";
+    echo "<meta http-equiv='refresh' content='0 url=signup.php'>";
+    exit();
+} 
+
+else{
+    $sql="INSERT INTO user (id, name, age, gender, password) VALUES ('$user_id','$user_name','$user_age','$user_gender','$user_pw')";
+    $result = mysqli_query($conn, $sql);
+}
+
 if($result) { echo "insert success!"; }
 else { echo "failure"; }
     
