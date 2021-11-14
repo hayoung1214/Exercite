@@ -32,14 +32,28 @@ if($count>0){
 } 
 
 else{
+    /* Start transaction */
+    mysqli_begin_transaction($conn);
+
+    /* set autocommit to off */
+    mysqli_autocommit($conn, FALSE);
+   
     $sql="INSERT INTO user (id, name, age, gender, password) VALUES ('$user_id','$user_name','$user_age','$user_gender','$user_pw')";
     $result = mysqli_query($conn, $sql);
-}
 
-if($result) { echo "insert success!"; }
-else { echo "failure"; }
+    /* commit transaction */
+    if(!mysqli_commit($conn)){
+        echo "commit failed";
+        exit();
+    }
+
+    mysqli_close($conn);
+
+    echo "<script type='text/javascript'>alert('회원가입이 완료되었습니다.');</script>";
+    echo "<meta http-equiv='refresh' content='0 url=login.php'> " ;// 회원가입 후 연결되는 페이지 
+
     
-mysqli_close($conn);
+}
+    
+
 ?>
-<script type="text/javascript">alert('회원가입이 완료되었습니다.');</script>
-<meta http-equiv="refresh" content="0 url=login.php"> <!-- 회원가입 후 연결되는 페이지 -->
