@@ -49,7 +49,7 @@ mysqli_close($conn); // 디비 접속 닫기
 <section>
 <div class="mainCon">
     <div class="updateTitle"><h3><br><br>회원정보</h3></div>
-    <form action="userupdate_sql.php" method="UPDATE">
+    <form action="userupdate_sql.php" method="POST">
         <input type="hidden" name="userid" value="<?= $_SESSION['user_id']?>">
         <table class="updateTable">
             <tr>
@@ -58,19 +58,19 @@ mysqli_close($conn); // 디비 접속 닫기
             </tr>
             <tr>
                 <td>비밀번호</td>
-                <td><input type="password" name="pw1"></td>
+                <td><input type="password" name="pw1" required></td>
             </tr>
             <tr>
                 <td>비밀번호 확인</td>
-                <td><input type="password" name="pw2"></td>
+                <td><input type="password" name="pw2" required></td>
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input type="text" name="name" placeholder=<?= $row['name']?>></td>
+                <td><input type="text" name="name" placeholder=<?= $row['name']?> required></td>
             </tr>
             <tr>
                 <td>나이</td>
-                <td><input type="int" name="age" placeholder=<?= $row['age']?>></td>
+                <td><input type="int" name="age" placeholder=<?= $row['age']?> required></td>
             </tr>
         </table>
         <div class="updateBtn">
