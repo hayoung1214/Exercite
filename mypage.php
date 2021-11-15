@@ -75,7 +75,7 @@ mysqli_close($conn); // 디비 접속 닫기
         </table>
         <div class="updateBtn">
         <input type="submit" value="수정">
-        <input type="button" value="취소" onclick="history.back(1)">
+        <input type="button" value="취소" onclick="location.href='main.php'">
         </div>
     </form>
 </div>
