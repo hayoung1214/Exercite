@@ -11,7 +11,7 @@ $sql = "SELECT  *, course.name AS course_name, center.name AS center_name FROM  
 $result = mysqli_query($conn, $sql);
 
 //echo "<style>td { border:1px solid #ccc; padding:5px; }</style>";
-echo "<table><tr> <th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
+echo "<table><tr> </th><th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
 echo "<br><br>";
 
 if(mysqli_num_rows($result) > 0) {
@@ -36,10 +36,56 @@ else{
 }
 
 
+$sql = "SELECT  * FROM user WHERE id='".$_SESSION['user_id']."'";
+$result = mysqli_query($conn, $sql);
+$row =  mysqli_fetch_array($result);
 
-mysqli_close($conn); // 디비 접속 닫기
-
+mysqli_close($conn); // 디비 접속 닫기         
 ?>
+
+<!DOCTYPE html>
+<html>
+<body>
+<section>
+<div class="mainCon">
+    <div class="updateTitle"><h3><br><br>회원정보</h3></div>
+    <form action="userupdate_sql.php" method="UPDATE">
+        <input type="hidden" name="userid" value="<?= $_SESSION['user_id']?>">
+        <table class="updateTable">
+            <tr>
+                <td width="50%" >아이디</td>
+                <td><?= $_SESSION['user_id'] ?></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pw1"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" name="pw2"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name" placeholder=<?= $row['name']?>></td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td><input type="int" name="age" placeholder=<?= $row['age']?>></td>
+            </tr>
+        </table>
+        <div class="updateBtn">
+        <input type="submit" value="수정">
+        <input type="button" value="취소" onclick="history.back(1)">
+        </div>
+    </form>
+</div>
+</section>
+
+</body>
+</html>
+ 
+
+
 <style>
   table {
     width: 100%;
@@ -51,4 +97,11 @@ mysqli_close($conn); // 디비 접속 닫기
     padding: 10px;
     text-align:center;
   }
+
+  body{
+    text-align:center;
+  }
+
+
+  
 </style>
