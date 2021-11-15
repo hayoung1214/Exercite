@@ -26,13 +26,16 @@ if(mysqli_num_rows($result) > 0) {
             </td>";
         echo "</tr>";
     }
-
+    echo "</table>";
 }
+
 else{
-    echo "테이블에 데이터가 없습니다.";
+
+    echo "</table><br><br>";
+    echo "<center>수강신청 내역이 없습니다.";
 }
 
-echo "</table>";
+
 
 mysqli_close($conn); // 디비 접속 닫기
 
