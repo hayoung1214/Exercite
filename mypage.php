@@ -6,21 +6,28 @@ $password='team10';
 $dbname='team10';
     
 $conn = new mysqli($host, $user, $password, $dbname);
-echo "<h2>", $_SESSION['user_id']," 님의 수강 신청 내역입니다.</h2>";
-$sql = "SELECT  *, course.name AS course_name, center.name AS center_name FROM  course  LEFT JOIN center  ON course.center_name = center.name LEFT JOIN registeration ON registeration.course_number = course.number WHERE registeration.user_id='".$_SESSION['user_id']."'";
-$result = mysqli_query($conn, $sql);
+
+$sql1 = "SELECT  * FROM user WHERE id='".$_SESSION['user_id']."'";
+$result1 = mysqli_query($conn, $sql1);
+$row1 =  mysqli_fetch_array($result1);
+
+
+echo "<h2>", $row1['name']," 님의 수강 신청 내역입니다.</h2>";
+
+$sql2 = "SELECT  *, course.name AS course_name, center.name AS center_name FROM  course  LEFT JOIN center  ON course.center_name = center.name LEFT JOIN registeration ON registeration.course_number = course.number WHERE registeration.user_id='".$_SESSION['user_id']."'";
+$result2 = mysqli_query($conn, $sql2);
 
 //echo "<style>td { border:1px solid #ccc; padding:5px; }</style>";
 echo "<table><tr> </th><th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
 echo "<br><br>";
 
-if(mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
+if(mysqli_num_rows($result2) > 0) {
+    while($row2 = mysqli_fetch_assoc($result2)) {
         
         echo "<tr>";
-        echo "<td>". $row["course_name"]."</td><td>" . $row["start_date"]. "</td><td>" . $row["end_date"]. "</td><td>" . $row["center_name"]. "</td><td>" .$row["address"]."</td><td>".$row["phone"]."</td>";
+        echo "<td>". $row2["course_name"]."</td><td>" . $row2["start_date"]. "</td><td>" . $row2["end_date"]. "</td><td>" . $row2["center_name"]. "</td><td>" .$row2["address"]."</td><td>".$row2["phone"]."</td>";
         echo "<td><form action='coursedelete_sql.php' method='POST'>
-            <input type=hidden name=number value=".$row["course_number"]." >
+            <input type=hidden name=number value=".$row2["course_number"]." >
             <input type='submit' value=Delete>
             </form>
             </td>";
@@ -36,9 +43,7 @@ else{
 }
 
 
-$sql = "SELECT  * FROM user WHERE id='".$_SESSION['user_id']."'";
-$result = mysqli_query($conn, $sql);
-$row =  mysqli_fetch_array($result);
+
 
 mysqli_close($conn); // 디비 접속 닫기         
 ?>
@@ -66,11 +71,11 @@ mysqli_close($conn); // 디비 접속 닫기
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input type="text" name="name" placeholder=<?= $row['name']?> required></td>
+                <td><input type="text" name="name" placeholder=<?= $row1['name']?> required></td>
             </tr>
             <tr>
                 <td>나이</td>
-                <td><input type="int" name="age" placeholder=<?= $row['age']?> required></td>
+                <td><input type="int" name="age" placeholder=<?= $row1['age']?> required></td>
             </tr>
         </table>
         <div class="updateBtn">
