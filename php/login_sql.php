@@ -31,17 +31,17 @@
             $_SESSION['user_password'] = $row["password"];
             //echo $_SESSION['user_id'] , $_SESSION['user_password'] ;
             mysqli_close($conn);
-            echo " <meta http-equiv='refresh' content='0 url=main.php'> "; // 로그인 후 연결되는 페이지 
+            echo " <meta http-equiv='refresh' content='0 url=../html/main.html'> "; // 로그인 후 연결되는 페이지 
         }
         else{
             echo " <script> alert('비밀번호가 맞지 않습니다.'); </script>";
-            echo "<meta http-equiv='refresh' content='0 url=login.php'>";
+            echo "<meta http-equiv='refresh' content='0 url=../html/login.html'>";
             exit();
         }
     }
     else{
         echo " <script> alert('해당 아이디가 존재하지 않습니다.'); </script>";
-        echo "<meta http-equiv='refresh' content='0 url=login.php'>";
+        echo "<meta http-equiv='refresh' content='0 url=../html/login.html'>";
         exit();
 
     }

@@ -29,12 +29,12 @@
         $row =  mysqli_fetch_array($result);
         if($pw1 != $pw2){
             echo " <script> alert('비밀번호가 일치하지 않습니다'); </script>";
-            echo "<meta http-equiv='refresh' content='0 url=mypage.php'>";
+            echo "<meta http-equiv='refresh' content='0 url=../php/mypage.php'>";
             exit();
           
         } elseif($pw1 == $row['password']){
             echo " <script> alert('이전 비밀번호와 같습니다.'); </script>";
-            echo "<meta http-equiv='refresh' content='0 url=mypage.php'>";
+            echo "<meta http-equiv='refresh' content='0 url=../php/mypage.php'>";
             exit();
         }
     }
@@ -47,7 +47,7 @@
     }
     else{
         echo " <script> alert('사용자 정보가 수정되었습니다.'); </script>";
-        echo "<meta http-equiv='refresh' content='0 url=mypage.php'>";
+        echo "<meta http-equiv='refresh' content='0 url=../php/mypage.php'>";
         exit();
     }
  
