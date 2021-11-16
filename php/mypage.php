@@ -18,7 +18,7 @@ $sql2 = "SELECT  *, course.name AS course_name, center.name AS center_name FROM 
 $result2 = mysqli_query($conn, $sql2);
 
 //echo "<style>td { border:1px solid #ccc; padding:5px; }</style>";
-echo "<table><tr> </th><th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
+echo "<table><tr> <th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
 echo "<br><br>";
 
 if(mysqli_num_rows($result2) > 0) {
