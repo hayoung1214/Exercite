@@ -27,7 +27,7 @@ $count = mysqli_num_rows($result);
 
 if($count>0){
     echo " <script> alert('이미 존재하는 아이디 입니다.'); </script>";
-    echo "<meta http-equiv='refresh' content='0 url=signup.php'>";
+    echo "<meta http-equiv='refresh' content='0 url=../html/signup.html'>";
     exit();
 } 
 
@@ -50,7 +50,7 @@ else{
     mysqli_close($conn);
 
     echo "<script type='text/javascript'>alert('회원가입이 완료되었습니다.');</script>";
-    echo "<meta http-equiv='refresh' content='0 url=login.php'> " ;// 회원가입 후 연결되는 페이지 
+    echo "<meta http-equiv='refresh' content='0 url=../html/login.html'> " ;// 회원가입 후 연결되는 페이지 
 
     
 }
