@@ -7,18 +7,20 @@ $dbname='team10';
     
 $conn = new mysqli($host, $user, $password, $dbname);
 
-$sql2 = "SELECT center_name, name, SUM(1) FROM course GROUP BY center_name, name";
+$sql2 = "SELECT center_name, type, SUM(1) FROM  course  INNER JOIN type  ON course.number = type.course_number GROUP BY center_name, type";
 $result2 = mysqli_query($conn, $sql2);
 
+//$sql2 = "SELECT  * FROM  course  LEFT JOIN type  ON course.number = type.course_number ";
+
 echo "<h2>센터별 보유 강좌 개수</h2>";
-echo "<table><tr> </th><th>센터명</th> <th>난이도</th> <th>강좌 개수</th>  </tr> ";
+echo "<table><tr> </th><th>센터명</th> <th>종목</th> <th>강좌 개수</th>  </tr> ";
 echo "<br><br>";
 
 if(mysqli_num_rows($result2) > 0) {
     while($row2 = mysqli_fetch_assoc($result2)) {
         
         echo "<tr>";
-        echo "<td>". $row2["center_name"]."</td><td>" . $row2["name"]. "</td><td>" . $row2["SUM(1)"]. "</td>";
+        echo "<td>". $row2["center_name"]."</td><td>" . $row2["type"]. "</td><td>" . $row2["SUM(1)"]. "</td>";
        
         echo "</tr>";
     }
