@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
-<body>
-
+<body style=background-color:lightgrey>
+<div id="form">
 <form  action="../php/signup_sql.php"  method="post">
+    <br><br>
               <h1>회원가입</h1>
                 <hr>
                 <table>
@@ -11,6 +12,7 @@
                     <td><label for=""><b>아이디</b></label></td>
                     <td><input type="text" placeholder="Enter id" name="id" required></td>
                     </tr>
+                    <br><br>
                     <tr>
                     <td><label for=""><b>비밀번호</b></label></td>
                     <td><input type="password" placeholder="Enter Password" name="password" required></td>
@@ -28,10 +30,28 @@
                     <td>남<input type="radio" name="gender" value="남"> 여<input type="radio" name="gender" value="여"></td>
                     </tr>
                     </table>
+                    
                     <div class="clearfix">
+                        <br>
                         <button type="submit" class="signupbtn">가입하기</button>
                     </div>
 </form>
-    
+</div>
 </body>
 </html>
+
+</html>
+<style>
+  body { 
+    text-align: center; 
+    margin: 0 auto;
+   
+  }
+
+  #form {
+          display: inline-block;
+          text-align: center;
+          margin: 0 auto;
+          
+        }
+</style>
