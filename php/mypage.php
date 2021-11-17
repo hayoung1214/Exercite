@@ -14,6 +14,7 @@ $row1 =  mysqli_fetch_array($result1);
 
 echo "<h2>", $row1['name']," 님의 수강 신청 내역입니다.</h2>";
 
+
 $sql2 = "SELECT  *, course.name AS course_name, center.name AS center_name FROM  course  LEFT JOIN center  ON course.center_name = center.name LEFT JOIN registeration ON registeration.course_number = course.number WHERE registeration.user_id='".$_SESSION['user_id']."'";
 $result2 = mysqli_query($conn, $sql2);
 
@@ -81,6 +82,7 @@ mysqli_close($conn); // 디비 접속 닫기
         <div class="updateBtn">
         <input type="submit" value="수정">
         <input type="button" value="취소" onclick="location.href='../html/main.html'">
+        <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
         </div>
     </form>
 </div>
