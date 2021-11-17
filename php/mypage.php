@@ -18,7 +18,7 @@ $sql2 = "SELECT  *, course.name AS course_name, center.name AS center_name FROM 
 $result2 = mysqli_query($conn, $sql2);
 
 //echo "<style>td { border:1px solid #ccc; padding:5px; }</style>";
-echo "<table><tr> </th><th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
+echo "<table><tr> <th>프로그램명</th> <th>강좌 시작 날짜</th> <th>강좌 끝나는 날짜</th> <th>센터명</th> <th>주소</th> <th>전화번호</th> <th>취소하기</th>  </tr> ";
 echo "<br><br>";
 
 if(mysqli_num_rows($result2) > 0) {
@@ -54,7 +54,7 @@ mysqli_close($conn); // 디비 접속 닫기
 <section>
 <div class="mainCon">
     <div class="updateTitle"><h3><br><br>회원정보</h3></div>
-    <form action="userupdate_sql.php" method="POST">
+    <form action="../php/userupdate.php" method="POST">
         <input type="hidden" name="userid" value="<?= $_SESSION['user_id']?>">
         <table class="updateTable">
             <tr>
@@ -80,7 +80,7 @@ mysqli_close($conn); // 디비 접속 닫기
         </table>
         <div class="updateBtn">
         <input type="submit" value="수정">
-        <input type="button" value="취소" onclick="location.href='main.php'">
+        <input type="button" value="취소" onclick="location.href='../html/main.html'">
         </div>
     </form>
 </div>

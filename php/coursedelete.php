@@ -26,7 +26,7 @@
     }
     else{
         echo " <script> alert('수강 신청이 취소되었습니다.'); </script>";
-        echo "<meta http-equiv='refresh' content='0 url=mypage.php'>";
+        echo "<meta http-equiv='refresh' content='0 url=../php/mypage.php'>";
         exit();
 
     }
