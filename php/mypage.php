@@ -54,7 +54,7 @@ mysqli_close($conn); // 디비 접속 닫기
 <section>
 <div class="mainCon">
     <div class="updateTitle"><h3><br><br>회원정보</h3></div>
-    <form action="../php/userupdate_sql.php" method="POST">
+    <form action="../php/userupdate.php" method="POST">
         <input type="hidden" name="userid" value="<?= $_SESSION['user_id']?>">
         <table class="updateTable">
             <tr>
@@ -80,7 +80,7 @@ mysqli_close($conn); // 디비 접속 닫기
         </table>
         <div class="updateBtn">
         <input type="submit" value="수정">
-        <input type="button" value="취소" onclick="location.href='../php/main.php'">
+        <input type="button" value="취소" onclick="location.href='../html/main.html'">
         </div>
     </form>
 </div>

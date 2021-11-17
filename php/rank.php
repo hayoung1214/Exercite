@@ -46,7 +46,7 @@ if(mysqli_num_rows($result2) > 0) {
 else{
 
     echo "</table><br><br>";
-    echo "<center>수강신청 내역이 없습니다.";
+    echo "<center>랭킹이 조회되지 않습니다.";
 }
 
 
