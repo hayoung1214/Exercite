@@ -35,16 +35,19 @@ else{
     /* Start transaction */
     mysqli_begin_transaction($conn);
 
-    /* set autocommit to off */
-    mysqli_autocommit($conn, FALSE);
+    try{
+        /* set autocommit to off */
+        mysqli_autocommit($conn, FALSE);
    
-    $sql="INSERT INTO user (id, name, age, gender, password) VALUES ('$user_id','$user_name','$user_age','$user_gender','$user_pw')";
-    $result = mysqli_query($conn, $sql);
+        $sql="INSERT INTO user (id, name, age, gender, password) VALUES ('$user_id','$user_name','$user_age','$user_gender','$user_pw')";
+        $result = mysqli_query($conn, $sql);
 
-    /* commit transaction */
-    if(!mysqli_commit($conn)){
-        echo "commit failed";
-        exit();
+        /* If code reaches this point without errors then commit the data in the database */
+        mysqli_commit($conn);
+    } catch (mysqli_sql_exception $exception) {
+        mysqli_rollback($conn);
+
+        throw $exception;
     }
 
     mysqli_close($conn);
