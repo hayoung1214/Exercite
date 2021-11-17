@@ -39,10 +39,11 @@
         }
     }
    
-    $check="UPDATE user SET password='".$pw1."', name='".$user_name."', age= '".$age."' WHERE id='".$user_id."'";
-    $result = mysqli_query($conn, $check);
-    
-    if(!$result){
+    $sql1="UPDATE user SET password='".$pw1."' WHERE id='".$user_id."'";
+    $sql2="UPDATE user SET name='".$user_name."', age= '".$age."' WHERE id='".$user_id."'";
+    $result1 = mysqli_query($conn, $sql1);
+    $result2 = mysqli_query($conn, $sql2);
+    if(!$result1 || !$result2){
         echo "update 에러";
     }
     else{
