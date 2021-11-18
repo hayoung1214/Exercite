@@ -1,10 +1,6 @@
 <?php
     session_start();
-
-    $host='localhost';
-    $user='team10';
-    $password='team10';
-    $dbname='team10';
+    include 'dbinfo.inc';
 
     //변수지정
    
@@ -14,19 +10,10 @@
 
     // $current_user= $_SESSION['user_id']; //이렇게 연결 가능한 지 확인하기
    
-    $conn=new mysqli($host, $user, $password, $dbname);
-    if($conn){
-        echo 'sucess mysql connect</p>';
-    }
-    else{
-        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
-        exit;
-    }
 
     $reg_sp="INSERT INTO registeration (user_id,course_number) VALUES($current_user, $course_id)"; 
     $result = mysqli_query($conn, $reg_sp);
 
-    $conn2=new mysqli($host, $user, $password, $dbname);
    
     if(!$result){
         echo '결과없음';
@@ -38,7 +25,7 @@
         HAVING rt.course_number=$course_id"; 
 
         echo"$course_id";
-        $result2 = mysqli_query( $conn2, $cnt_query);
+        $result2 = mysqli_query( $conn, $cnt_query);
 
         
         if($result2){

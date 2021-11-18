@@ -1,11 +1,6 @@
 <?php
 session_start();
-$host='localhost';
-$user='team10';
-$password='team10';
-$dbname='team10';
-    
-$conn = new mysqli($host, $user, $password, $dbname);
+include 'dbinfo.inc';
 
 $sql2 = "SELECT center_name, type, SUM(1) FROM  course  INNER JOIN type  ON course.number = type.course_number GROUP BY center_name, type";
 $result2 = mysqli_query($conn, $sql2);
