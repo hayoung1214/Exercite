@@ -63,12 +63,12 @@ mysqli_close($conn); // 디비 접속 닫기
                 <td><?= $_SESSION['user_id'] ?></td>
             </tr>
             <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="pw1" required></td>
+                <td>새로 바꿀 비밀번호 입력</td>
+                <td><input type="password" name="re_pw1" required></td>
             </tr>
             <tr>
                 <td>비밀번호 확인</td>
-                <td><input type="password" name="pw2" required></td>
+                <td><input type="password" name="re_pw2" required></td>
             </tr>
             <tr>
                 <td>이름</td>

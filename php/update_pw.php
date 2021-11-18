@@ -8,7 +8,7 @@
     //변수지정
    
     $user_id=$_POST['user_id']; //$_session??
-    $user_pw=$_$_POST['re_pw'];
+    $user_pw=$_POST['re_pw']; 
  
    
     $conn=new mysqli($host, $user, $password, $dbname);
