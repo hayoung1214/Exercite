@@ -83,6 +83,7 @@ mysqli_close($conn); // 디비 접속 닫기
         <input type="submit" value="수정">
         <input type="button" value="취소" onclick="location.href='../php/main.php'">
         <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
+        <input type="button" value="회원탈퇴" onclick="location.href='../php/sign_out.php'">
         </div>
     </form>
 </div>
