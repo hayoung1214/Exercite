@@ -27,7 +27,7 @@ if(mysqli_num_rows($result2) > 0) {
         
         echo "<tr>";
         echo "<td>". $row2["course_name"]."</td><td>" . $row2["start_date"]. "</td><td>" . $row2["end_date"]. "</td><td>" . $row2["center_name"]. "</td><td>" .$row2["address"]."</td><td>".$row2["phone"]."</td>";
-        echo "<td><form action='coursedelete_sql.php' method='POST'>
+        echo "<td><form action='coursedelete.php' method='POST'>
             <input type=hidden name=number value=".$row2["course_number"]." >
             <input type='submit' value=Delete>
             </form>
@@ -81,7 +81,7 @@ mysqli_close($conn); // 디비 접속 닫기
         </table>
         <div class="updateBtn">
         <input type="submit" value="수정">
-        <input type="button" value="취소" onclick="location.href='../html/main.html'">
+        <input type="button" value="취소" onclick="location.href='../php/main.php'">
         <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
         </div>
     </form>

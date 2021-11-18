@@ -10,9 +10,9 @@ $sql1 = "SELECT  * FROM user WHERE id='".$_SESSION['user_id']."'";
 $result1 = mysqli_query($conn, $sql1);
 $row1 =  mysqli_fetch_array($result1);
 
-
+echo "<br>";
 echo "<h2> 현재 인기 수강 강좌입니다. </h2>";
-
+echo "<br>";
 //$sql2 = "SELECT *, COUNT(user_id) as current FROM registeration GROUP BY course_number";
 
 // 현 수강인원 : $sql2 = "SELECT *, COUNT(user_id) as current FROM registeration GROUP BY course_number"; , $row2["current"] : 현 수강인원 
@@ -23,7 +23,7 @@ $result2 = mysqli_query($conn, $sql2);
 
 
 echo "<table><tr> <th>랭킹 </th><th> 강좌 이름  </th> <th>  </th> <th>센터명</th> <th>현 수강인원</th></tr> ";
-echo "<br><br>";
+
 
 $past_id=0;
 if(mysqli_num_rows($result2) > 0) {
@@ -54,16 +54,8 @@ else{
 
 mysqli_close($conn); // 디비 접속 닫기         
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-<section>
-
-</section>
-
-</body>
-</html>
+<br><br>
+<input type="button" value="취소" onclick="location.href='../php/main.php'">
  
 <style>
   table {
