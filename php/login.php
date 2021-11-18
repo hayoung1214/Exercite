@@ -29,9 +29,9 @@
             echo " <script> alert('로그인을 성공하였습니다.'); </script>";
             $_SESSION['user_id'] = $row["id"]; //세션에 로그인 성공한 유저의 아이디와 비밀번호 저장
             $_SESSION['user_password'] = $row["password"];
-            //echo $_SESSION['user_id'] , $_SESSION['user_password'] ;
+            
             mysqli_close($conn);
-            echo " <meta http-equiv='refresh' content='0 url=../html/main.html'> "; // 로그인 후 연결되는 페이지 
+            echo " <meta http-equiv='refresh' content='0 url=../php/main.php'> "; // 로그인 후 연결되는 페이지 
         }
         else{
             echo " <script> alert('비밀번호가 맞지 않습니다.'); </script>";

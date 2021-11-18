@@ -11,10 +11,10 @@ $sql2 = "SELECT center_name, type, avg(total) FROM  course  INNER JOIN type  ON 
 $result2 = mysqli_query($conn, $sql2);
 
 //$sql2 = "SELECT  * FROM  course  LEFT JOIN type  ON course.number = type.course_number ";
-
+echo "<br>";
 echo "<h2>센터별, 종목별 평균 수용 인원</h2>";
 echo "<table><tr> </th><th>센터명</th> <th>종목</th> <th>평균 수용 인원</th>  </tr> ";
-echo "<br><br>";
+echo "<br>";
 
 if(mysqli_num_rows($result2) > 0) {
     while($row2 = mysqli_fetch_assoc($result2)) {
@@ -38,10 +38,9 @@ else{
 
 mysqli_close($conn); // 디비 접속 닫기         
 ?>
-
-
  
-
+<br><br>
+<input type="button" value="취소" onclick="location.href='../php/main.php'">
 
 <style>
   table {

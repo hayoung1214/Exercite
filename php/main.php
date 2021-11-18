@@ -13,7 +13,13 @@
             <a href="main.php">
                 <!-- <img src="logo.jpg" width="100px" height="100px"> -->
             </a>
-            <p>Let's find your EXERCITE</p>
+            <p>Let's find your EXERCITE <input type="button" value="마이페이지" onclick="location.href='../php/mypage.php'">
+            </p>
+            <input type="button" value="인기 강좌 조회" onclick="location.href='../php/rank.php'">
+            <input type="button" value="센터별 보유 강좌 개수 조회" onclick="location.href='../php/ad1.php'">
+            <input type="button" value="센터별, 종목별 평균 수용 인원 조회" onclick="location.href='../php/ad2.php'">
+            
+            
         </header>
         <!--콘텐츠부분-->
         <section>
@@ -22,6 +28,7 @@
 	<p>
 
                     <p><b>당신의 EXERCITE를 골라주세요!  </b></p>
+                    
                     <br> 운동 종목 </br>
                       <input type="radio" name="sport_type" value="검도"> 검도
                       <input type="radio" name="sport_type" value="수영"> 수영

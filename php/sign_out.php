@@ -7,9 +7,7 @@
 
     //변수지정
    
-    $user_id=$_POST['user_id'];
-
- 
+    $user_id=$_SESSION['user_id'];
    
     $conn=new mysqli($host, $user, $password, $dbname);
     if($conn){
@@ -23,7 +21,7 @@
     $del_reg="DELETE FROM registeration WHERE registeration.user_id='".$user_id."'";
     $result = mysqli_query($conn, $del_reg);
 
-    $del_user="DELETE FROM user WHERE user.user_id='".$user_id."'";
+    $del_user="DELETE FROM user WHERE user.id='".$user_id."'";
     $result2 = mysqli_query($conn, $del_user);
 
    
@@ -32,7 +30,7 @@
     }
     else{
         echo " <script> alert('계정이 삭제되었습니다.'); </script>";
-        // echo "<meta http-equiv='refresh' content='0 url=../php/mypage.php'>";
+        echo "<meta http-equiv='refresh' content='0 url=../html/login.html'>";
         exit();
 
     }

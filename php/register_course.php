@@ -10,8 +10,7 @@
    
     $course_id=$_POST['button'];
 
-    $current_user= '1871048';
-    // '$_SESSION['user_id']'; 
+    $current_user= $_SESSION['user_id']; 
 
     // $current_user= $_SESSION['user_id']; //이렇게 연결 가능한 지 확인하기
    
@@ -43,15 +42,12 @@
 
         
         if($result2){
-            $row =  mysqli_fetch_array($result2);
-            $cur_num= $row['current'];
-            echo"해당 강의 현재 수강인원 ".$cur_num."";
-        echo " <script> alert('수강신청 완료!'); </script>";
-        // echo '<meta http-equiv='refresh' content='0 url=../php/main.php'>';
-        }
-        else{
-            echo"CNT가 제대로 이루어지지 않음";
-        }
+            while ($newArray = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
+               $cur_num= $newArray['course_number '];
+
+        echo " <script> alert('수강신청 완료!해당 강의 현재 수강인원 ".$cur_num."'); </script>";
+        echo "<meta http-equiv='refresh' content='0 url=../php/main.php'>";
+        }}
         exit();
 
     }

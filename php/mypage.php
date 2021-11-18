@@ -27,7 +27,7 @@ if(mysqli_num_rows($result2) > 0) {
         
         echo "<tr>";
         echo "<td>". $row2["course_name"]."</td><td>" . $row2["start_date"]. "</td><td>" . $row2["end_date"]. "</td><td>" . $row2["center_name"]. "</td><td>" .$row2["address"]."</td><td>".$row2["phone"]."</td>";
-        echo "<td><form action='coursedelete_sql.php' method='POST'>
+        echo "<td><form action='coursedelete.php' method='POST'>
             <input type=hidden name=number value=".$row2["course_number"]." >
             <input type='submit' value=Delete>
             </form>
@@ -63,12 +63,12 @@ mysqli_close($conn); // 디비 접속 닫기
                 <td><?= $_SESSION['user_id'] ?></td>
             </tr>
             <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="pw1" required></td>
+                <td>새로 바꿀 비밀번호 입력</td>
+                <td><input type="password" name="re_pw1" required></td>
             </tr>
             <tr>
                 <td>비밀번호 확인</td>
-                <td><input type="password" name="pw2" required></td>
+                <td><input type="password" name="re_pw2" required></td>
             </tr>
             <tr>
                 <td>이름</td>
@@ -81,8 +81,9 @@ mysqli_close($conn); // 디비 접속 닫기
         </table>
         <div class="updateBtn">
         <input type="submit" value="수정">
-        <input type="button" value="취소" onclick="location.href='../html/main.html'">
+        <input type="button" value="취소" onclick="location.href='../php/main.php'">
         <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
+        <input type="button" value="회원탈퇴" onclick="location.href='../php/sign_out.php'">
         </div>
     </form>
 </div>
