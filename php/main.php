@@ -14,6 +14,7 @@
                 <!-- <img src="logo.jpg" width="100px" height="100px"> -->
             </a>
             <p>Let's find your EXERCITE <input type="button" value="마이페이지" onclick="location.href='../php/mypage.php'">
+            <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
             </p>
             <input type="button" value="인기 강좌 조회" onclick="location.href='../php/rank.php'">
             <input type="button" value="센터별 보유 강좌 개수 조회" onclick="location.href='../php/ad1.php'">
