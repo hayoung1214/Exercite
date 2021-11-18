@@ -42,12 +42,12 @@
 
         
         if($result2){
-            while ($newArray = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
-               $cur_num= $newArray['course_number '];
-
+            while ($newArray = mysqli_fetch_array($result2,MYSQLI_ASSOC)) {
+               $cur_num= $newArray['current'];
+            }
         echo " <script> alert('수강신청 완료!해당 강의 현재 수강인원 ".$cur_num."'); </script>";
         echo "<meta http-equiv='refresh' content='0 url=../php/main.php'>";
-        }}
+        }
         exit();
 
     }
