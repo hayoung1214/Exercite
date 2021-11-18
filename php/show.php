@@ -145,7 +145,7 @@
             마감일 :".$res_end." 
             종목  : ". $res_type." 최대인원 : ".$res_num." 센터명 : ".$res_center."";
             
-            echo "<button type='submit' name='button' value='".$course_number."'> ".$course_number."  신청하기 </button>";
+            echo "<button type='submit' name='button' value='$course_number'> ".$course_number."  신청하기 </button>";
 
             
             echo"<br>";
