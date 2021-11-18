@@ -39,7 +39,7 @@
         FROM registeration  AS rt ,user GROUP BY course_number 
         HAVING rt.course_number=$course_id"; 
 
-        $result3 = mysqli_query( $conn2,  $cnt_query2);
+        $result3 = mysqli_query( $conn,  $cnt_query2);
         $row2=mysqli_fetch_array($result3);
         $avg_age=$row2['avg_age'];
 
