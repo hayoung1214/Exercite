@@ -41,12 +41,9 @@
                       <input type="radio" name="sport_type" value="golf"> 골프
                       <input type="radio" name="sport_type" value="ballet"> 발레 -->
                      <br>
-                      <br> 원하는 인원수 </br>
-                      <input type="radio" name="sport_num" value="five"> 1-5
-                      <input type="radio" name="sport_num" value="ten"> 6-10
-                      <input type="radio" name="sport_num" value="fithteen"> 10-15
-                      <input type="radio" name="sport_num" value="more"> 15 초과
-                  
+                      <br> 원하는 최소 인원수 </br>
+                      <input type="number" name="sport_num">
+                     
                       <br> 
                       <br>운동 지역 </br>
                       <input type="radio" name="region" value="성남시">성남시
