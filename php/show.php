@@ -60,21 +60,21 @@
 
      
 
-    if($_POST['sport_num']=='five'){
-        $_POST['sport_num']=5;
-    }
-    else if($_POST['sport_num']=='ten'){
-        $_POST['sport_num']=8;
-    }
+    // if($_POST['sport_num']=='five'){
+    //     $_POST['sport_num']=5;
+    // }
+    // else if($_POST['sport_num']=='ten'){
+    //     $_POST['sport_num']=8;
+    // }
 
-    else if($_POST['sport_num']=='fithteen'){
-        $_POST['sport_num']=15;
+    // else if($_POST['sport_num']=='fithteen'){
+    //     $_POST['sport_num']=15;
 
-    }
-    else{
-        $_POST['sport_num']=35;
+    // }
+    // else{
+    //     $_POST['sport_num']=35;
 
-    }
+    // }
 
 
      $mysqli = mysqli_connect($host, $user, $password, $dbname);
@@ -82,7 +82,7 @@
      $end_date='';
      $center_name='';
 
-    $test_type='검도';
+    // $test_type='검도';
 
      if(mysqli_connect_errno()){
        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
@@ -90,7 +90,7 @@
      }
 
  
-
+    //  echo"<p>".$_POST['sport_num']."</p>";
     
     $sport_query=" SELECT 
     DISTINCT t.type AS sport_type  , 
@@ -101,12 +101,12 @@
     FROM course AS c
     JOIN type AS t ON t.course_number=c.number
     JOIN region AS r ON r.course_number=c.number
-    -- JOIN registeration AS rt ON rt.course_number=c.number 
-    WHERE  t.type='".$_POST['sport_type']."' AND c.total = '".$_POST['sport_num']."' 
-     AND  c.start_date >= '".$_POST['start_date']."' AND  r.name= '".$_POST['region']."' ";
+    WHERE  t.type='".$_POST['sport_type']."' AND c.total >= '".$_POST['sport_num'] ."'  AND  c.start_date >= '".$_POST['start_date']."' AND  
+    r.name= '".$_POST['region']."' ";
 
-//STRCMP( t.type,'".$_POST['sport_type']."' )= 0 
-//AND t.type='".$_POST['sport_type']."'
+
+
+
   
     //(SELECT COUNT(r.user_id) AS current FROM registeration GROUP BY course_number WHERE rt.course_number='".$newArray['course_number']."' ) 
    // AS current
