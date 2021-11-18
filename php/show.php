@@ -168,7 +168,8 @@
    
     mysqli_close( $mysqli); 
   ?>
-
+    <br>
+    <input type="button" value="뒤로가기" onclick="location.href='../php/main.php'">
    </form>
 
   <?php 
