@@ -34,7 +34,7 @@
     else{
       
         $cnt_query="SELECT COUNT(r.user_id) AS current 
-        FROM registeration GROUP BY course_number 
+        FROM registeration as rt GROUP BY course_number 
         WHERE rt.course_number='". $course_id."'"; 
         $result2 = mysqli_query($conn,  $cnt_query);
         
