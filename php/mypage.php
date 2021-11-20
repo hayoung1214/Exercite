@@ -1,11 +1,6 @@
 <?php
 session_start();
-$host='localhost';
-$user='team10';
-$password='team10';
-$dbname='team10';
-    
-$conn = new mysqli($host, $user, $password, $dbname);
+include 'dbinfo.inc';
 
 $sql1 = "SELECT  * FROM user WHERE id='".$_SESSION['user_id']."'";
 $result1 = mysqli_query($conn, $sql1);

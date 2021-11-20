@@ -1,23 +1,11 @@
 <?php
     session_start();
-    $host='localhost';
-    $user='team10';
-    $password='team10';
-    $dbname='team10';
-
+    include 'dbinfo.inc';
+     
     //변수지정
     $user_id=$_POST['id'];
     $user_pw=$_POST['password'];
    
-
-    $conn=new mysqli($host, $user, $password, $dbname);
-    if($conn){
-        echo 'sucess mysql connect</p>';
-    }
-    else{
-        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
-        exit;
-    }
 
     $check="SELECT * FROM user WHERE id='".$_POST['id']."'";
     echo $check;

@@ -52,10 +52,7 @@
 <form method="POST" action="register_course.php">
 
       <?php
-     $host='localhost';
-     $user='team10';
-     $password='team10';
-     $dbname='team10';
+     include 'dbinfo.inc';
      $wherecondition = "where";
 
 
@@ -64,7 +61,7 @@
 
 
 
-     $mysqli = mysqli_connect($host, $user, $password, $dbname);
+     $conn = mysqli_connect($host, $user, $password, $dbname);
   
      $end_date='';
      $center_name='';
@@ -100,7 +97,7 @@
    //COUNT(rt.user_id)  AS current  GROUP BY course_number 
    //JOIN registeration  AS rt  ON rt.course_number=c.number
    
-   $result1 = mysqli_query( $mysqli, $sport_query);
+   $result1 = mysqli_query( $conn, $sport_query);
   
     if($result1){
    
@@ -149,11 +146,11 @@
     }
     else{
 
-        printf("Could not retrieve records: %s\n",mysqli_error( $mysqli));
+        printf("Could not retrieve records: %s\n",mysqli_error( $conn));
     }
     
    
-    mysqli_close( $mysqli); 
+    mysqli_close( $conn); 
   ?>
     <br>
     <input type="button" value="뒤로가기" onclick="location.href='../php/main.php'">
