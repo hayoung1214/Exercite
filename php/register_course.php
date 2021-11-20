@@ -1,3 +1,5 @@
+<!-- 1871048 장이제 작성 -->
+
 <?php
     session_start();
 
@@ -13,7 +15,7 @@
     $current_user= $_SESSION['user_id']; 
     //$_SESSION['user_id']; 
 
-    // $current_user= $_SESSION['user_id']; //이렇게 연결 가능한 지 확인하기
+ 
    
     $conn=new mysqli($host, $user, $password, $dbname);
     if($conn){

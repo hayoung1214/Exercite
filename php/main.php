@@ -1,3 +1,4 @@
+<!-- 1871048 장이제 작성 -->
 <head>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <meta name="description" content="This is an HTML5 example">
@@ -11,7 +12,7 @@
         <!--헤더시작-->
         <header>
             <a href="main.php">
-                <!-- <img src="logo.jpg" width="100px" height="100px"> -->
+               
             </a>
             <p>Let's find your EXERCITE <input type="button" value="마이페이지" onclick="location.href='../php/mypage.php'">
             <input type="button" value="로그아웃" onclick="location.href='../php/logout.php'">
@@ -36,12 +37,7 @@
                       <input type="radio" name="sport_type" value="농구"> 농구
                       <input type="radio" name="sport_type" value="골프"> 골프
                       <input type="radio" name="sport_type" value="발레"> 발레
-                      <!-- <input type="radio" name="sport_type" value="kendo"> 검도
-                      <input type="radio" name="sport_type" value="swim"> 수영
-                      <input type="radio" name="sport_type" value="basket"> 농구
-                      <input type="radio" name="sport_type" value="golf"> 골프
-                      <input type="radio" name="sport_type" value="ballet"> 발레 -->
-                     <br>
+                     
                       <br> 원하는 최소 인원수 </br>
                       <input type="number" name="sport_num">
                      
@@ -52,10 +48,7 @@
                       <input type="radio" name="region" value="고양시">고양시
                       <input type="radio" name="region" value="인천광역시">인천광역시
 
-                      <!-- <input type="radio" name="region" value="sungnam">성남시
-                      <input type="radio" name="region" value="seoul"> 서울시
-                      <input type="radio" name="region" value="goyang">고양시
-                      <input type="radio" name="region" value="incheon"> 인천광역시 -->
+                     
                       <br>
 
                       <br>가능한  운동 시작 날짜</br>
@@ -70,12 +63,7 @@
         </section>
         <!--사이드바-->
         <aside>
-             <!-- <form action="login_ye1.php" method="post">
-                <button>로그인</button>
-            </form> -->
-                 <!-- <form action="new_signup.php" method="post">
-				<button>회원가입</button>
-	</form> -->
+            
         </aside>
         <!--풋터-->
         <footer>   </footer>

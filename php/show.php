@@ -1,3 +1,4 @@
+<!-- 1871048 장이제 작성 -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -60,21 +61,7 @@
 
      
 
-    // if($_POST['sport_num']=='five'){
-    //     $_POST['sport_num']=5;
-    // }
-    // else if($_POST['sport_num']=='ten'){
-    //     $_POST['sport_num']=8;
-    // }
 
-    // else if($_POST['sport_num']=='fithteen'){
-    //     $_POST['sport_num']=15;
-
-    // }
-    // else{
-    //     $_POST['sport_num']=35;
-
-    // }
 
 
      $mysqli = mysqli_connect($host, $user, $password, $dbname);

@@ -1,3 +1,4 @@
+<!-- 1871048 장이제 작성 -->
 <?php
     session_start();
     $host='localhost';
