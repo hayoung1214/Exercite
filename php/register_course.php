@@ -38,8 +38,7 @@
 
 
         $cnt_query2="SELECT AVG(user.age) AS avg_age 
-        FROM registeration  AS rt ,user GROUP BY course_number 
-        HAVING rt.course_number=$course_id"; 
+
 
         $result3 = mysqli_query( $conn,  $cnt_query2);
         $row2=mysqli_fetch_array($result3);
