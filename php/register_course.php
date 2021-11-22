@@ -37,11 +37,16 @@
             }
 
 
+<<<<<<< HEAD
             $cnt_query2="SELECT AVG(user.age) AS avg_age 
             FROM  registeration  LEFT JOIN user  ON registeration.user_id = user.id 
             GROUP BY course_number HAVING course_number=$course_id";
 
 
+=======
+        $cnt_query2="SELECT AVG(user.age) AS avg_age FROM  registeration  LEFT JOIN user  ON registeration.user_id = user.id GROUP BY course_number HAVING course_number=$course_id"; 
+        
+>>>>>>> b4f55e49cccbe157e71aa3d5916ee5d0d32a8868
         $result3 = mysqli_query( $conn,  $cnt_query2);
         $row2=mysqli_fetch_array($result3);
         $avg_age=$row2['avg_age'];

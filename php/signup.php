@@ -1,3 +1,4 @@
+<!-- 1871044 이하영 작성 -->
 <?php
 include 'dbinfo.inc';
 
