@@ -37,12 +37,15 @@
             }
 
 
-        $cnt_query2="SELECT AVG(user.age) AS avg_age 
+            $cnt_query2="SELECT AVG(user.age) AS avg_age 
+            FROM  registeration  LEFT JOIN user  ON registeration.user_id = user.id 
+            GROUP BY course_number HAVING course_number=$course_id";
 
 
         $result3 = mysqli_query( $conn,  $cnt_query2);
         $row2=mysqli_fetch_array($result3);
         $avg_age=$row2['avg_age'];
+
 
 
         echo " <script> alert('수강신청 완료! 해당 강의 현재 수강인원: ".$cur_num."  신청자 평균 나이:  ".$avg_age."'); </script>";
